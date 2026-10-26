@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Margarito & Anahi | Our Wedding</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:#faf6ef;
+  --brown:#49372d;
+  --gold:#a7805f;
+  --muted:#806956;
+  --panel:#f0e4d8;
+}
+* {box-sizing:border-box}
+body {
+  margin:0;
+  background:#e9e1d8;
+  color:var(--brown);
+  font-family:"DM Sans",sans-serif;
+}
+.site {
+  max-width:470px;
+  margin:auto;
+  background:var(--cream);
+  min-height:100vh;
+  padding-bottom:85px;
+}
+header {
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.brand {
+  font-family:"Cormorant Garamond",serif;
+  font-size:23px;
+  font-style:italic;
+}
+.lang button {
+  background:#fffaf4;
+  border:1px solid #e5d2be;
+  border-radius:20px;
+  padding:8px 12px;
+  color:var(--brown);
+  cursor:pointer;
+}
+.lang button.active {background:#e9d5c0}
+.hero {
+  height:260px;
+  margin:0 14px;
+  background:#e5d6c5;
+  border-radius:12px;
+  overflow:hidden;
+}
+.hero img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 55%;
+}
+.center {text-align:center}
+.heading {padding:20px 12px 8px}
+.eyebrow {
+  font-size:10px;
+  letter-spacing:3px;
+  color:var(--gold);
+}
+.names {
+  font-family:"Great Vibes",cursive;
+  font-size:48px;
+  font-weight:400;
+  margin:12px 0 4px;
+}
+.ornament {
+  text-align:center;
+  color:var(--gold);
+  margin:12px 0;
+}
+.welcome {padding:15px 25px;text-align:center}
+.welcome h2 {
+  font-family:"Cormorant Garamond",serif;
+  font-size:31px;
+  font-weight:500;
+  margin:0 0 8px;
+}
+p {font-size:13px;line-height:1.7}
+.seat {
+  margin:10px 25px 25px;
+  background:linear-gradient(135deg,#f3e7db,#e9d6c5);
+  border-radius:16px;
+  padding:23px;
+  text-align:center;
+}
+.seat .number {
+  font-family:"Cormorant Garamond",serif;
+  font-size:57px;
+  margin:4px;
+}
+.note {
+  margin:15px 25px 30px;
+  padding:22px 10px;
+  border-top:1px solid #decab8;
+  border-bottom:1px solid #decab8;
+  text-align:center;
+}
+.script {
+  font-family:"Great Vibes",cursive;
+  font-size:37px;
+  font-weight:400;
+  margin:0 0 10px;
+}
+.section-title {
+  font-family:"Cormorant Garamond",serif;
+  font-size:37px;
+  font-style:italic;
+  font-weight:400;
+  text-align:center;
+}
+.schedule {padding:0 28px 20px}
+.event {
+  display:flex;
+  gap:17px;
+  align-items:center;
+  margin:23px 0;
+}
+.event .symbol {
+  border:1px solid #dfc9b5;
+  width:49px;
+  height:49px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:22px;
+}
+.event strong {color:#9a7354;font-size:13px}
+.event p {margin:3px 0}
+.page {display:none}
+.page.active {display:block}
+.card {
+  margin:20px 24px;
+  padding:25px;
+  background:var(--panel);
+  border-radius:17px;
+  text-align:center;
+}
+input,textarea {
+  width:100%;
+  border:1px solid #decbb9;
+  border-radius:10px;
+  padding:12px;
+  margin:7px 0;
+  font:inherit;
+}
+button.primary {
+  border:0;
+  background:#a7805f;
+  color:white;
+  border-radius:30px;
+  padding:13px 25px;
+  cursor:pointer;
+}
+nav {
+  position:fixed;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:100%;
+  max-width:470px;
+  background:#fffaf4;
+  border-top:1px solid #e8d9ca;
+  display:flex;
+  justify-content:space-around;
+  padding:12px 4px;
+}
+nav button {
+  border:0;
+  background:none;
+  color:#826b58;
+  font:inherit;
+  font-size:11px;
+  cursor:pointer;
+}
+nav button.active {color:#9a6743;font-weight:600}
+nav span {display:block;font-size:21px;margin-bottom:4px}
+footer {
+  text-align:center;
+  color:#a7805f;
+  padding:25px;
+  font-size:12px;
+}
+</style>
+</head>
+<body>
+<div class="site">
+<header>
+  <div class="brand">M & A ♡</div>
+  <div class="lang">
+    <button id="en" onclick="changeLanguage('en')">🇺🇸 EN</button>
+    <button id="es" onclick="changeLanguage('es')">🇲🇽 ES</button>
+  </div>
+</header>
+
+<main id="home" class="page active">
+  <div class="hero">
+    <img src="assets/proposal.jpg" alt="Our proposal photo">
+  </div>
+  <div class="heading center">
+    <div class="eyebrow" data-en="THE WEDDING OF" data-es="LA BODA DE"></div>
+    <h1 class="names">Margarito & Anahi</h1>
+    <div class="eyebrow" data-en="FOREVER STARTS HERE" data-es="NUESTRO PARA SIEMPRE"></div>
+  </div>
+  <div class="ornament">──── ♡ ────</div>
+  <div class="welcome">
+    <h2 id="welcome"></h2>
+    <p data-en="We're so happy you're celebrating this special day with us!" data-es="¡Nos alegra mucho que nos acompañes en este día especial!"></p>
+  </div>
+  <div class="seat">
+    <div class="eyebrow" data-en="YOUR TABLE" data-es="TU MESA"></div>
+    <div class="number" id="tableNumber">05</div>
+    <p data-en="We saved a special seat for you!" data-es="¡Tenemos un lugar especial para ti!"></p>
+  </div>
+  <div class="note">
+    <div class="ornament">♥</div>
+    <h2 class="script" data-en="A Little Note for You" data-es="Una Nota Especial Para Ti"></h2>
+    <p id="personalNote"></p>
+    <p><em data-en="With love, Margarito & Anahi" data-es="Con cariño, Margarito & Anahi"></em></p>
+  </div>
+  <section class="schedule">
+    <h2 class="section-title" data-en="Our Special Day" data-es="Nuestro Gran Día"></h2>
+    <div class="event">
+      <div class="symbol">♡</div>
+      <div><strong>3:00 PM</strong><p data-en="Wedding Ceremony" data-es="Ceremonia"></p></div>
+    </div>
+    <div class="event">
+      <div class="symbol">📷</div>
+      <div><strong>4:30 PM</strong><p data-en="Cocktail Hour & Photos" data-es="Cócteles y Fotos"></p></div>
+    </div>
+    <div class="event">
+      <div class="symbol">♧</div>
+      <div><strong>6:00 PM</strong><p data-en="Dinner & Toasts" data-es="Cena y Brindis"></p></div>
+    </div>
+    <div class="event">
+      <div class="symbol">♫</div>
+      <div><strong>8:00 PM</strong><p data-en="Dancing & Celebration" data-es="Baile y Celebración"></p></div>
+    </div>
+  </section>
+</main>
+
+<main id="photos" class="page">
+  <h2 class="section-title" data-en="Captured With Love" data-es="Nuestros Recuerdos"></h2>
+  <div class="card">
+    <h2>📷</h2>
+    <h3 data-en="Share Your Memories!" data-es="¡Comparte Tus Recuerdos!"></h3>
+    <p data-en="Help us capture our special day." data-es="Ayúdanos a recordar este día especial."></p>
+    <input type="file" accept="image/*" multiple id="photoInput">
+    <p id="photoStatus"></p>
+    <small data-en="Photo selection demo. Shared uploads will be connected later." data-es="Demostración. Las fotos compartidas se conectarán después."></small>
+  </div>
+</main>
+
+<main id="film" class="page">
+  <h2 class="section-title" data-en="Our Love Story" data-es="Nuestra Historia"></h2>
+  <div class="card">
+    <h2>♡</h2>
+    <video controls playsinline width="100%" poster="assets/kiss.jpg">
+      <source src="assets/our-film.mp4" type="video/mp4">
+    </video>
+    <p data-en="A short film we made to share a glimpse of our story." data-es="Una pequeña película para compartir nuestra historia."></p>
+  </div>
+</main>
+
+<main id="messages" class="page">
+  <h2 class="section-title" data-en="Leave a Little Love" data-es="Déjanos Un Mensajito"></h2>
+  <div class="card">
+    <p data-en="Share your wishes and favorite memories." data-es="Comparte tus buenos deseos y recuerdos."></p>
+    <input id="messageName" placeholder="Your name">
+    <textarea id="messageText" rows="4" placeholder="Your message"></textarea>
+    <button class="primary" onclick="saveMessage()" data-en="Leave a Message" data-es="Enviar Mensaje"></button>
+    <div id="messageList"></div>
+    <p><small data-en="Demo: messages save only in this browser." data-es="Demo: los mensajes solo se guardan en este navegador."></small></p>
+  </div>
+</main>
+
+<footer>MADE WITH LOVE · M & A ♡</footer>
+
+<nav>
+  <button class="active" onclick="openPage('home',this)"><span>⌂</span><b data-en="Home" data-es="Inicio"></b></button>
+  <button onclick="openPage('photos',this)"><span>▧</span><b data-en="Photos" data-es="Fotos"></b></button>
+  <button onclick="openPage('film',this)"><span>▣</span><b data-en="Our Film" data-es="Video"></b></button>
+  <button onclick="openPage('messages',this)"><span>♡</span><b data-en="Messages" data-es="Mensajes"></b></button>
+</nav>
+</div>
+
+<script>
+// Temporary guest profiles for testing.
+// We'll move these into a private database later.
+const guests = {
+  g001: {
+    name:"Emily",
+    language:"en",
+    table:"05",
+    note:{
+      en:"Emily, we're so grateful to have you in our lives. Thank you for being part of our story and sharing this beautiful day with us.",
+      es:"Emily, estamos muy agradecidos de tenerte en nuestras vidas. Gracias por ser parte de nuestra historia."
+    }
+  },
+  g002: {
+    name:"Carlos",
+    language:"es",
+    table:"02",
+    note:{
+      en:"Carlos, thank you for celebrating with us!",
+      es:"Carlos, ¡gracias por acompañarnos en nuestro día especial!"
+    }
+  }
+};
+
+const id = new URLSearchParams(location.search).get("guest") || "g001";
+const guest = guests[id] || guests.g001;
+let language = localStorage.getItem("wedding-language-"+id) || guest.language;
+
+function changeLanguage(value) {
+  language=value;
+  localStorage.setItem("wedding-language-"+id,value);
+  document.documentElement.lang=value;
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    el.textContent=el.dataset[value];
+  });
+  document.getElementById("welcome").textContent =
+    value==="es" ? "¡Bienvenida/o, "+guest.name+"!" : "Welcome, "+guest.name+"!";
+  document.getElementById("tableNumber").textContent=guest.table;
+  document.getElementById("personalNote").textContent=guest.note[value];
+  document.getElementById("en").classList.toggle("active",value==="en");
+  document.getElementById("es").classList.toggle("active",value==="es");
+  document.getElementById("messageName").placeholder=value==="es"?"Tu nombre":"Your name";
+  document.getElementById("messageText").placeholder=value==="es"?"Tu mensaje":"Your message";
+}
+function openPage(page,button) {
+  document.querySelectorAll(".page").forEach(el=>el.classList.remove("active"));
+  document.getElementById(page).classList.add("active");
+  document.querySelectorAll("nav button").forEach(el=>el.classList.remove("active"));
+  button.classList.add("active");
+  window.scrollTo(0,0);
+}
+function saveMessage() {
+  const name=document.getElementById("messageName").value.trim();
+  const text=document.getElementById("messageText").value.trim();
+  if(!name||!text)return;
+  const messages=JSON.parse(localStorage.getItem("wedding-messages")||"[]");
+  messages.unshift({name,text});
+  localStorage.setItem("wedding-messages",JSON.stringify(messages));
+  document.getElementById("messageText").value="";
+  showMessages();
+}
+function showMessages() {
+  const list=document.getElementById("messageList");
+  list.replaceChildren();
+  const messages=JSON.parse(localStorage.getItem("wedding-messages")||"[]");
+  messages.forEach(m=>{
+    const box=document.createElement("div");
+    box.style.cssText="padding:12px;border-bottom:1px solid #d9c6b4;text-align:left";
+    const strong=document.createElement("strong");
+    strong.textContent=m.name;
+    const p=document.createElement("p");
+    p.textContent=m.text;
+    box.append(strong,p);
+    list.append(box);
+  });
+}
+document.getElementById("photoInput").addEventListener("change",e=>{
+  document.getElementById("photoStatus").textContent =
+    e.target.files.length+" photo(s) selected — demo only";
+});
+changeLanguage(language);
+showMessages();
+</script>
+</body>
+</html>
